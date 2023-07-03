@@ -1,0 +1,44 @@
+
+
+.main{
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left{
+
+}
+
+.right{
+    width: 400px;
+    padding: 5px 5px;
+    background-color: rgb(242, 199, 144);
+    border-radius: 5px;
+}
+
+.line{
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+    border-radius: 3px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 30px;
+}
+.contactDetail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,72 @@
+
+
+.main{
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.left{
+
+}
+
+.right{
+    padding: 5px 5px;
+    background-color: rgb(242, 199, 144);
+    border-radius: 5px;
+    
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.verifyEmail{
+    margin:0px 20px;
+    padding: 6px 9px;
+    background-color:#ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.logout{
+    margin:0px 30px;
+    padding: 6px 9px;
+    background-color:#ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.line{
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+    border-radius: 3px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 30px;
+}
+.form{
+    width: 80%;
+    margin: auto;
+}
+
+.table{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 35px;
+}
+.addExp{
+    width: 75%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+}

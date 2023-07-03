@@ -1,0 +1,38 @@
+
+
+.form{
+    width: 50%;
+    margin: auto;
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.addExp{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 15px 10px 20px 0px;
+    margin-right: 210px;
+}
+.addExp button{
+    margin-left: 15px;
+    margin-right: 0px;
+}
+
+.totalExpense{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+
+}
+.amount{
+    margin-right: 100px;
+}
+
+.dark{
+    color: white;
+}

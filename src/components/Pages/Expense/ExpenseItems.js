@@ -46,8 +46,13 @@ const ExpenseItems = () => {
     try {
       const response = await fetch(`${url}${email}.json`);
       const data = await response.json();
+      console.log("backend data")
+      console.log(typeof (data))
+      //got all data from backend that is an object
       const newItem = [];
       for (let key in data) {
+        console.log(data.key)
+        console.log({ id: key, ...data[key] })
         newItem.push({ id: key, ...data[key] });
       }
       // ctx.addItem(newItem);

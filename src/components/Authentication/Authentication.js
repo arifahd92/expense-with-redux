@@ -40,10 +40,10 @@ const Authentication = () => {
     try {
       if (isLogin) {
         url =
-          "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAzlQHFRtkaZpExFfx1mBDR64QU8JL9mO4";
+          "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCd6ahJjYNQaAxx13PKKsZcxp4-0dqhnjs";
       } else {
         url =
-          "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAzlQHFRtkaZpExFfx1mBDR64QU8JL9mO4";
+          "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCd6ahJjYNQaAxx13PKKsZcxp4-0dqhnjs";
       }
 
       const response = await fetch(url, {
@@ -59,6 +59,8 @@ const Authentication = () => {
       });
 
       const responseInjson = await response.json();
+      console.log(responseInjson)
+      console.log(responseInjson.idToken)
 
       if (responseInjson.error) {
         alert(responseInjson.error.message);

@@ -12,6 +12,7 @@ const ExpenseItems = () => {
   const [id, setid] = useState(null);
   const [isEditing, setisEditing] = useState(false);
   const [showExp, setshowExp] = useState(false);
+  const [dataFlag, setDataFlag] = useState(false);
 
   // const ctx=useContext(StoreData);
   //Redux
@@ -44,21 +45,23 @@ const ExpenseItems = () => {
 
   const getDataFrom = async () => {
     try {
+      setDataFlag(true);
       const response = await fetch(`${url}${email}.json`);
       const data = await response.json();
-      console.log("backend data")
-      console.log(typeof (data))
+      console.log("backend data");
+      console.log(typeof data);
       //got all data from backend that is an object
       const newItem = [];
       for (let key in data) {
-        console.log(data.key)
-        console.log({ id: key, ...data[key] })
+        console.log({ id: key, ...data[key] });
         newItem.push({ id: key, ...data[key] });
       }
       // ctx.addItem(newItem);
       dispatch(expAction.addItemHandler(newItem));
+      setDataFlag(false);
     } catch (err) {
       alert(err);
+      setDataFlag(false);
     }
   };
 
@@ -73,6 +76,7 @@ const ExpenseItems = () => {
 
   const toDeleteData = async (id) => {
     try {
+      setDataFlag(true);
       const resp = await fetch(`${url}${email}/${id}.json`, {
         method: "DELETE",
         headers: {
@@ -80,15 +84,18 @@ const ExpenseItems = () => {
         },
       });
       const respo = await resp.json();
+      setDataFlag(false);
       getDataFrom();
     } catch (err) {
       alert(err);
+      setDataFlag(false);
     }
   };
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
+      setDataFlag(true);
       if (!isEditing) {
         const response = await fetch(`${url}${email}.json`, {
           method: "POST",
@@ -102,6 +109,7 @@ const ExpenseItems = () => {
           },
         });
         const data1 = await response.json();
+        setDataFlag(false);
       } else {
         const res = await fetch(`${url}${email}/${id}.json`, {
           method: "PUT",
@@ -115,6 +123,7 @@ const ExpenseItems = () => {
           },
         });
         setisEditing(false);
+        setDataFlag(false);
       }
       getDataFrom();
       setAmount("");
@@ -122,6 +131,7 @@ const ExpenseItems = () => {
       setDiscription("");
     } catch (err) {
       alert(err);
+      setDataFlag(false);
     }
   };
 
@@ -194,6 +204,7 @@ const ExpenseItems = () => {
                     onChange={amountChangeHandler}
                     value={amount}
                     required
+                    min={0}
                   />
                 </div>
               </div>
@@ -249,9 +260,15 @@ const ExpenseItems = () => {
           </tr>
         </thead>
         <tbody>
+          {dataFlag && (
+            <div className={classes.loadingContainer}>
+              <div className={classes.loader}></div>
+            </div>
+          )}
           {
             // ctx.items.map((item,indx)=>(
             // Redux
+
             totalItem.map((item, indx) => (
               <tr className={!theme ? "" : classes.dark} key={item.id}>
                 <th scope="row">{indx + 1}</th>

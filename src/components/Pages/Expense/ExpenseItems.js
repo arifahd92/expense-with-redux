@@ -240,7 +240,11 @@ const ExpenseItems = () => {
                   required
                 />
               </div>
-              <button className="btn btn-primary mt-4 btn1" type="submit">
+              <button
+                className="btn btn-primary mt-4 btn1"
+                type="submit"
+                disabled={dataFlag}
+              >
                 {!isEditing ? "Submit" : "Update"}
               </button>
             </div>
@@ -262,7 +266,11 @@ const ExpenseItems = () => {
         <tbody>
           {dataFlag && (
             <div className={classes.loadingContainer}>
-              <div className={classes.loader}></div>
+              <div
+                style={{ height: "150px", width: "150px" }}
+                class="spinner-border text-info"
+                role="status"
+              ></div>
             </div>
           )}
           {
@@ -277,6 +285,7 @@ const ExpenseItems = () => {
                 <td>{item.decription}</td>
                 <td>
                   <button
+                    disabled={dataFlag}
                     type="button"
                     className="btn btn-warning"
                     onClick={editHandler.bind(
@@ -292,6 +301,7 @@ const ExpenseItems = () => {
                 </td>
                 <td>
                   <button
+                    disabled={dataFlag}
                     type="button"
                     className="btn btn-danger"
                     onClick={toDeleteData.bind(null, item.id)}
@@ -308,6 +318,13 @@ const ExpenseItems = () => {
         <div className={classes.title}>Total Of Expense</div>
         <div className={classes.amount}>${totalAmount}</div>
       </div>
+      {totalItem.length === 0 && !showExp && !dataFlag && (
+        <div>
+          <div class="alert alert-info mt-4 text-center " role="alert">
+            it seems you have not added any expense item!
+          </div>
+        </div>
+      )}
     </Fragment>
   );
 };

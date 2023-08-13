@@ -44,14 +44,7 @@
     top: 300px;
     left :48vw
 }
-.loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
-    border-radius: 100%;
-    width: 200px;
-    height: 200px;
-    animation: spin 1.5s linear infinite;
-  }
+
   
   @keyframes spin {
     0% { transform: rotate(0deg); }

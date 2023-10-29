@@ -1,52 +1,62 @@
-
-
-.form{
-    width: 50%;
-    margin: auto;
-    border: 1px solid #777;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 30px;
+.form {
+  width: 50%;
+  margin: auto;
+  border: 1px solid #777;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 30px;
 }
 
-.addExp{
-    display: flex;
-    flex-direction: row-reverse;
-    margin: 15px 10px 20px 0px;
-    margin-right: 210px;
+.addExp {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 15px 10px 20px 0px;
+  margin-right: 210px;
 }
-.addExp button{
-    margin-left: 15px;
-    margin-right: 0px;
-}
-
-.totalExpense{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
-.title{
-
-}
-.amount{
-    margin-right: 100px;
+.addExp button {
+  margin-left: 15px;
+  margin-right: 0px;
 }
 
-.dark{
-    color: white;
+.totalExpense {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
-.loadingContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 300px;
-    left :48vw
+.title {
+}
+.amount {
+  margin-right: 100px;
 }
 
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.dark {
+  color: white;
+}
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 300px;
+  left: 48vw;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .form {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 765px) {
+  .form {
+    width: 100%;
+  }
+}

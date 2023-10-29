@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { authAction } from "../storeRedux/authReducer";
-import AuthContext from "./auth-context";
+//import AuthContext from "./auth-context";
 import classes from "./Authentication.module.css";
 
 const Authentication = () => {
@@ -59,8 +59,8 @@ const Authentication = () => {
       });
 
       const responseInjson = await response.json();
-      console.log(responseInjson)
-      console.log(responseInjson.idToken)
+      console.log(responseInjson);
+      console.log(responseInjson.idToken);
 
       if (responseInjson.error) {
         alert(responseInjson.error.message);
@@ -127,15 +127,13 @@ const Authentication = () => {
             )}
             <button
               type="submit"
-              style={{ cursor: isCursorAllow ? "not-allowed" : "pointer" }}
-            >
+              style={{ cursor: isCursorAllow ? "not-allowed" : "pointer" }}>
               {isLogin ? "Login" : "Create Account"}
             </button>
             <button
               type="button"
               className={classes.toggle}
-              onClick={switchAuthModeHandler}
-            >
+              onClick={switchAuthModeHandler}>
               {isLogin
                 ? "Don't have an account sign Up"
                 : "Login with existing account"}
